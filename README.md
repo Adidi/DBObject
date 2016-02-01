@@ -39,7 +39,7 @@ $db = DBObject::getInstance();
 $dbSlave = DBObject::getInstance('slave');
 ```
 #### getRows($sql,$params = null)
-get all rows from the database - each row is associative array with the fields of the table as their keys:
+get all rows from the database - each row is associative array with the fields of the table as the keys:
 ```php
 $db = DBObject::getInstance();
 
