@@ -128,7 +128,7 @@ $data['last'] // boolean if this is the last group (good for the pagination calc
 $data['page'] // the current numeric page of the group (good for the pagination calculation)
 ```
 #### getRow($sql,$params = null) 
-for signle row query (where user_id = 4)
+for signle row query (where user_id = ?)
 #### getValue($sql,$params = null)
 for single value query
 ```php
@@ -160,10 +160,10 @@ get the last mysql insert auto incremented id after insert query
 #### setTimeZoneOffset($mins)
 set timezone for the current query sessions - every timestamp field will be affected by that timezone
 in the final results set - good for localization
-**$mins** is the number difference in minutes (this is usually what you get from client side) - you can easily convert it to hours of course when needed.
+**$mins** is the number difference in minutes (this is usually what you get from client side - in javascript: **new Date().getTimezoneOffset()**) - you can easily convert it to hours of course when needed.
 ```php
 $db = DBObject::getInstance();
-$db->setTimeZoneOffset(120);
+$db->setTimeZoneOffset(-120);
 
 $sql = "SELECT user_name,last_logged_in FROM users WHERE  user_id = ? ";
 $row = $db->getRow($sql,10);
